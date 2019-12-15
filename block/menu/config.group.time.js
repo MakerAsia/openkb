@@ -37,7 +37,7 @@ module.exports = {
         {
             xml: `<sep gap="32"></sep><label text="Real Time Clock" web-class="headline"></label>`
         },
-        "mcp7941_rtc_begin",
+        // "mcp7941_rtc_begin",
         "mcp7941_rtc_set_datetime",
         "mcp7941_rtc_get_dayOfWeek",
         "mcp7941_rtc_get_hour",

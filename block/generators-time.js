@@ -1,25 +1,25 @@
 module.exports = function (Blockly) {
 	'use strict';
 
-	Blockly.JavaScript['mcp7941_rtc_begin'] = function (block) {
-		var number_sda = block.getFieldValue('SDA');
-		var number_scl = block.getFieldValue('SCL');
-		var code =
-			`
-	#EXTINC#include "MCP7941x.h"#END
+	// Blockly.JavaScript['mcp7941_rtc_begin'] = function (block) {
+	// 	var number_sda = block.getFieldValue('SDA');
+	// 	var number_scl = block.getFieldValue('SCL');
+	// 	var code =
+	// 		`
+	// #EXTINC#include "MCP7941x.h"#END
 	
-	#VARIABLE
-	MCP7941x rtc = MCP7941x();
-	byte _second, _minute, _hour, _dayOfWeek, _dayOfMonth, _month, _year;
-	#END
+	// #VARIABLE
+	// MCP7941x rtc = MCP7941x();
+	// byte _second, _minute, _hour, _dayOfWeek, _dayOfMonth, _month, _year;
+	// #END
 	
-	Wire1.begin(${number_sda}, ${number_scl});
-	#LOOP_EXT_CODE
-	rtc.getDateTime(&_second, &_minute, &_hour, &_dayOfWeek, &_dayOfMonth, &_month, &_year);
-	#END
-	\n`;
-		return code;
-	};
+	// Wire1.begin(${number_sda}, ${number_scl});
+	// #LOOP_EXT_CODE
+	// rtc.getDateTime(&_second, &_minute, &_hour, &_dayOfWeek, &_dayOfMonth, &_month, &_year);
+	// #END
+	// \n`;
+	// 	return code;
+	// };
 
 	Blockly.JavaScript['mcp7941_rtc_set_datetime'] = function (block) {
 		var dropdown_dayofweek= block.getFieldValue('DOW');
@@ -34,37 +34,37 @@ module.exports = function (Blockly) {
 	};
 
 	Blockly.JavaScript['mcp7941_rtc_get_dayOfWeek'] = function (block) {
-		var code = '_dayOfWeek';
+		var code = `rtc.getDayofWeek()`;
 		return [code, Blockly.JavaScript.ORDER_NONE];
 	};
 
 
 	Blockly.JavaScript['mcp7941_rtc_get_hour'] = function (block) {
-		var code = '_hour';
+		var code = `rtc.getHour()`;
 		return [code, Blockly.JavaScript.ORDER_NONE];
 	};
 
 	Blockly.JavaScript['mcp7941_rtc_get_minute'] = function (block) {
-		var code = '_minute';
+		var code = `rtc.getMinute()`;
 		return [code, Blockly.JavaScript.ORDER_NONE];
 	};
 
 	Blockly.JavaScript['mcp7941_rtc_get_second'] = function (block) {
-		var code = '_second';
+		var code = `rtc.getSecond()`;
 		return [code, Blockly.JavaScript.ORDER_NONE];
 	};
 
 	Blockly.JavaScript['mcp7941_rtc_get_day'] = function (block) {
-		var code = '_dayOfMonth';
+		var code = `rtc.getDay()`;
 		return [code, Blockly.JavaScript.ORDER_NONE];
 	};
 
 	Blockly.JavaScript['mcp7941_rtc_get_month'] = function (block) {
-		var code = '_month';
+		var code = `rtc.getMonth()`;		
 		return [code, Blockly.JavaScript.ORDER_NONE];
 	};
 	Blockly.JavaScript['mcp7941_rtc_get_year'] = function (block) {
-		var code = '_year';
+		var code = `rtc.getYear()`;	
 		return [code, Blockly.JavaScript.ORDER_NONE];
 	};
 

@@ -5,6 +5,9 @@
 #include "SPI.h"
 #include "Adafruit_GFX.h"
 #include "Adafruit_LEDBackpack.h"
+#include "MCP7941x.h"
+
+MCP7941x rtc = MCP7941x();
 
 ${EXTINC}
 
@@ -41,6 +44,6 @@ void setup()
 }
 void loop()
 {
-  ${LOOP_CODE}
   ${LOOP_EXT_CODE}
+  ${LOOP_CODE}
 }

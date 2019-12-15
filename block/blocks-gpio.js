@@ -28,6 +28,8 @@ module.exports = function (Blockly) {
 					["WIFI (IO02)", "2"],
 					["NTP (IO15)", "15"],
 					["IOT (IO12)", "12"],
+					["SW1 (IO16)", "16"],
+					["SW2 (IO14)", "14"],
 					["IN1 (IO32)", "32"],
 					["IN2 (IO33)", "33"],
 					["IN3 (IO34)", "34"],

@@ -28,6 +28,9 @@
 
       MCP7941x();
 
+      byte _second, _minute, _hour, _dayOfWeek, _dayOfMonth, _month, _year;
+
+
       byte decToBcd ( byte val );
       byte bcdToDec ( byte val );
 
@@ -43,6 +46,15 @@
 
       void setSramByte ( byte location, byte data );
       byte getSramByte ( byte location );
+
+      byte getDayofWeek();
+      byte getHour();
+      byte getMinute();
+      byte getSecond();
+      byte getDay();
+      byte getMonth();
+      byte getYear();
+
 
     private:
 
